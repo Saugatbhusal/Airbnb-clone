@@ -1,0 +1,80 @@
+<% layout('/layouts/boilerplate') -%>
+
+
+    <body>
+
+        <div class="row">
+            <div class="col col-8 offset-2">
+                <h3>Create new List</h3>
+                <form action="/listings" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+                    <div> <label class="form-label" for="title">Enter title</label>
+                        <input type="text" name="listing[title]" placeholder="Title" class="form-control" required>
+                        <div class="invalid-feedback">Enter a valid title</div>
+                        <br><br>
+
+
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="description">Description</label>
+                        <textarea name="listing[description]" placeholder="Enter description" class="form-control" required></textarea>
+                        <div class="invalid-feedback">Enter a valid title</div><br>
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="location"> Enter location</label>
+                        <input type="text" name="listing[location]" placeholder="location" class="form-control" required>
+                        <div class="invalid-feedback">Enter a valid location</div>
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="image"> Enter image</label>
+                        <input type="file" name="listing[image]" class="form-control" required>
+                        <div class="invalid-feedback">Enter a valid image</div> <br>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <div>
+                                <label class="form-label" for="price"> Enter price</label>
+                                <input type="number" name="listing[price]" placeholder="price" class="form-control" required>
+
+                            </div>
+                        </div>
+                        <div class="col col-md-8">
+                            <div>
+                                <label class="form-label" for="country">Country</label>
+                                <input type="text" name="listing[country]" placeholder="country" class="form-control" required>
+                            </div>
+
+                        </div>
+                    </div><br>
+
+
+                    <button class="btn btn-dark">add</button>
+
+                </form>
+                <br>
+            </div>
+
+        </div>
+        <!-- <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script> -->
+    </body>
