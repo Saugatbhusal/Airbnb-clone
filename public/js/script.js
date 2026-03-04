@@ -15,3 +15,17 @@
         });
     }, false);
 })();
+//index page toggle functionality
+let taxSwitch = document.getElementById("switchCheckDefault")
+let taxinfos = document.getElementsByClassName("tax-info");
+taxSwitch.addEventListener("click", () => {
+    for (info of taxinfos) {
+        if (info.style.display != "inline") {
+            info.style.display = "inline"
+        } else {
+            info.style.display = "none"
+        }
+
+    }
+
+})

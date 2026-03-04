@@ -14,6 +14,10 @@ const listingSchema = Schema({
         filename: String,
 
     },
+    category: {
+        type: String,
+        enum: ["Mountain", "Beach", "Castel", "Camping", "Village", "Amazon", "Dome"]
+    },
     price: Number,
     location: String,
     country: String,

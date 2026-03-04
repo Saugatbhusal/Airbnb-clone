@@ -32,6 +32,7 @@ var upload = multer({
 router.route("/").get(wrapAsync(listingController.index)).post(isLoggedIn, validateListing, upload.single('listing[image]'), wrapAsync(listingController.createListing)); // it is working
 //but listing.image is undefined as files are handeeld by multer so i dont know why validation is not throwing error?
 
+router.get("/filtered", listingController.filteredPage);
 router.get("/new", isLoggedIn, listingController.renderNewForm); //Show route(if this was before new list route then then when calling /listings/new new would be treated like id and listing/new woind render  )
 
 router.route("/:id").get(wrapAsync(listingController.showListing)).put(isLoggedIn, isOwner, upload.single('listing[image]'), validateListing, wrapAsync(listingController.updateListing))["delete"](isLoggedIn, isOwner, listingController.destroyListing); //edit route

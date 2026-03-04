@@ -113,3 +113,68 @@ body {
     background-color: black !important;
     color: white !important;
 }
+
+
+/*  index page filer icons */
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+}
+
+.filter {
+    text-align: center;
+    margin-right: 2rem;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.filter p {
+    margin-bottom: 0;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.2rem;
+    padding: 1rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-check-label {
+    font-size: 15px;
+}
+
+a i {
+    color: #222222;
+}
+
+
+/* filtered page */
+
+.listing-not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listing-not-found p {
+    padding: 3rem;
+}
+
+.filtered-listing-container {
+    padding-top: 1rem;
+}

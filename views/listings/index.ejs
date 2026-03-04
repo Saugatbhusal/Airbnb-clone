@@ -1,88 +1,63 @@
 <% layout('/layouts/boilerplate') -%>
 
 
-    <!-- <h2>All listing</h2> -->
-    <style>
-        #filters {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .filter {
-            text-align: center;
-            margin-right: 2rem;
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-        
-        .filter p {
-            margin-bottom: 0;
-        }
-        
-        .filter:hover {
-            opacity: 1;
-            cursor: pointer;
-        }
-        
-        .tax-info {
-            display: none;
-        }
-        
-        .tax-toggle {
-            border: 1px solid black;
-            border-radius: 1rem;
-            height: 3.2rem;
-            padding: 1rem;
-            margin-left: 5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .form-check-label {
-            font-size: 15px;
-        }
-    </style>
     <div id="filters">
         <div class="filter">
             <div><i class="fa-solid fa-fire"></i></div>
             <p>Trending</p>
         </div>
         <div class="filter">
-            <div><i class="fa-solid fa-bed"></i></div>
+            <div>
+                <a href="/listings"><i class="fa-solid fa-bed"></i></a>
+            </div>
             <p>Rooms</p>
         </div>
         <div class="filter">
-            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <div>
+                <a href="/listings/filtered/?place=Mountain"><i class="fa-solid fa-mountain-city"></i></a>
+                </i>
+            </div>
             <p>Mountain City</p>
         </div>
         <div class="filter">
-            <div><i class="fa-solid fa-mountain"></i></div>
+            <div>
+                <a href="/listings/filtered/?place=Mountain"><i class="fa-solid fa-mountain"></i></a>
+            </div>
             <p>Mountains</p>
         </div>
         <div class="filter">
-            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <div>
+                <a href="/listings/filtered/?place=Castle"><i class="fa-brands fa-fort-awesome"></i></a>
+            </div>
             <p>Castle</p>
         </div>
         <div class="filter">
-            <div><i class="fa-solid fa-umbrella-beach"></i></div>
+            <div>
+                <a href="/listings/filtered/?place=Beach"><i class="fa-solid fa-umbrella-beach"></i></a>
+            </div>
             <p>Beach</p>
         </div>
         <div class="filter">
-            <div><i class="fa-solid fa-tent"></i></div>
+            <div>
+                <a href="/listings/filtered/?place=Camping"><i class="fa-solid fa-tent"></i></a>
+            </div>
             <p>Camping</p>
         </div>
         <div class="filter">
-            <div><i class="fa-solid fa-tractor"></i></div>
+            <div>
+                <a href="/listings/filtered/?place=Village"><i class="fa-solid fa-tractor"></i></a>
+            </div>
             <p>village</p>
         </div>
         <div class="filter">
-            <div><i class="fa-solid fa-cloud-showers-water"></i></div>
+            <div>
+                <a href="/listings/filtered/?place=Amazon"><i class="fa-solid fa-cloud-showers-water"></i></a>
+            </div>
             <p>Amazon</p>
         </div>
         <div class="filter">
-            <div><i class="fa-solid fa-igloo"></i></div>
+            <div>
+                <a href="/listings/filtered/?place=Dome"><i class="fa-solid fa-igloo"></i></a></div>
             <p>Dome</p>
         </div>
         <div class="tax-toggle">
@@ -112,17 +87,4 @@
             <%}%>
     </div>
     <script>
-        let taxSwitch = document.getElementById("switchCheckDefault")
-        let taxinfos = document.getElementsByClassName("tax-info");
-        taxSwitch.addEventListener("click", () => {
-            for (info of taxinfos) {
-                if (info.style.display != "inline") {
-                    info.style.display = "inline"
-                } else {
-                    info.style.display = "none"
-                }
-
-            }
-
-        })
     </script>

@@ -1,0 +1,31 @@
+<% layout('/layouts/boilerplate') -%>
+    <%if(newListing.length<=0){%>
+        <div class="listing-not-found">
+            <p><b>We don’t have any
+                <%=place%> listings right now</b>
+
+            </p>
+        </div>
+        <%}%>
+            <div class="filtered-listing-container">
+
+                <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
+
+                    <%for(list of newListing){ %>
+                        <a class="list-link" href="/listings/<%=list.id%>">
+                            <div class="card col listing-card ">
+                                <img src="<%=list.image.url%>" class="card-img-top" alt="list_image" style="height: 15rem;">
+                                <div class="card-img-overlay"></div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <b> <%=list.title%> </b><br> &#36;
+                                        <%=list.price.toLocaleString("en-AU")%> / night
+                                            <i class="tax-info">&nbsp; +18% GST</i>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <%}%>
+                </div>
+            </div>

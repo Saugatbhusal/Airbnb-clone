@@ -16,6 +16,10 @@ var listingSchema = Schema({
     url: String,
     filename: String
   },
+  category: {
+    type: String,
+    "enum": ["Mountain", "Beach", "Castel", "Camping", "Village", "Amazon", "Dome"]
+  },
   price: Number,
   location: String,
   country: String,

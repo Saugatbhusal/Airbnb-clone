@@ -24,6 +24,7 @@ module.exports.showListing = async(req, res) => {
 }
 
 module.exports.createListing = async(req, res) => {
+
     let url = req.file.path;
     let filename = req.file.filename;
     const newListing = new Listing(req.body.listing)
@@ -43,9 +44,9 @@ module.exports.renderEditForm = async(req, res) => {
         return res.redirect("/listings")
     }
     let originalUrl = listing.image.url
-    console.log(originalUrl)
+
     originalUrl = originalUrl.replace("/upload", "/upload/h_250,w_250")
-    console.log(originalUrl)
+
     res.render("listings/edit", { listing, originalUrl })
 
 
@@ -77,3 +78,9 @@ module.exports.destroyListing = async(req, res) => {
 }
 
 //https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60
+
+module.exports.filteredPage = async(req, res) => {
+    let { place } = req.query
+    let newListing = await Listing.find({ category: place })
+    res.render("listings/filteredPage", { newListing, place })
+}

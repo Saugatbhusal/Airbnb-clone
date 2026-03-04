@@ -120,15 +120,13 @@ module.exports.renderEditForm = function _callee4(req, res) {
 
         case 7:
           originalUrl = listing.image.url;
-          console.log(originalUrl);
           originalUrl = originalUrl.replace("/upload", "/upload/h_250,w_250");
-          console.log(originalUrl);
           res.render("listings/edit", {
             listing: listing,
             originalUrl: originalUrl
           });
 
-        case 12:
+        case 10:
         case "end":
           return _context4.stop();
       }
@@ -199,3 +197,31 @@ module.exports.destroyListing = function _callee6(req, res) {
     }
   });
 }; //https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60
+
+
+module.exports.filteredPage = function _callee7(req, res) {
+  var place, newListing;
+  return regeneratorRuntime.async(function _callee7$(_context7) {
+    while (1) {
+      switch (_context7.prev = _context7.next) {
+        case 0:
+          place = req.query.place;
+          _context7.next = 3;
+          return regeneratorRuntime.awrap(Listing.find({
+            category: place
+          }));
+
+        case 3:
+          newListing = _context7.sent;
+          res.render("listings/filteredPage", {
+            newListing: newListing,
+            place: place
+          });
+
+        case 5:
+        case "end":
+          return _context7.stop();
+      }
+    }
+  });
+};
